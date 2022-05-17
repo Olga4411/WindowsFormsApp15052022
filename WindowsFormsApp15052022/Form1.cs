@@ -16,6 +16,9 @@ namespace WindowsFormsApp15052022
         public Form1()
         {
             InitializeComponent();
+            
+            UpDateColor();
+
         }
 
         private void bt_start_Click(object sender, EventArgs e)
@@ -34,6 +37,30 @@ namespace WindowsFormsApp15052022
                 //задержка выполнения кода программы на 50 милисекунд thread-Поток
                 Thread.Sleep(50);
             }
+        }
+
+        private void UpDateColor()
+        {
+            //устанавливаем цвет 
+            Color c = Color.FromArgb(trB_red.Value,trB_green.Value,trB_blue.Value);
+            //закрашиваем форму
+            BackColor = c;
+
+        }
+
+        private void trB_red_Scroll(object sender, EventArgs e)
+        {
+            UpDateColor();
+        }
+
+        private void trB_green_Scroll(object sender, EventArgs e)
+        {
+            UpDateColor();
+        }
+
+        private void trB_blue_Scroll(object sender, EventArgs e)
+        {
+            UpDateColor();
         }
     }
 }
