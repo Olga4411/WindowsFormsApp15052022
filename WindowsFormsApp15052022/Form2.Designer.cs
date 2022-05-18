@@ -39,6 +39,7 @@ namespace WindowsFormsApp15052022
             this.Name = "Form2";
             this.Text = "Form2";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form2_Paint);
+            //this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Form2_MouseClick);
             this.ResumeLayout(false);
 
         }
