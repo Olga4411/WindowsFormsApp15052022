@@ -31,8 +31,9 @@ namespace WindowsFormsApp15052022
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.panel_color = new System.Windows.Forms.Panel();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.panel_color = new System.Windows.Forms.Panel();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
@@ -45,6 +46,9 @@ namespace WindowsFormsApp15052022
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(753, 281);
             this.panel1.TabIndex = 0;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
             // 
             // groupBox1
             // 
@@ -58,14 +62,6 @@ namespace WindowsFormsApp15052022
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "инструменты";
             // 
-            // panel_color
-            // 
-            this.panel_color.BackColor = System.Drawing.Color.Yellow;
-            this.panel_color.Location = new System.Drawing.Point(18, 21);
-            this.panel_color.Name = "panel_color";
-            this.panel_color.Size = new System.Drawing.Size(72, 53);
-            this.panel_color.TabIndex = 0;
-            // 
             // trackBar1
             // 
             this.trackBar1.Location = new System.Drawing.Point(211, 21);
@@ -76,6 +72,15 @@ namespace WindowsFormsApp15052022
             this.trackBar1.TabIndex = 1;
             this.trackBar1.Value = 5;
             // 
+            // panel_color
+            // 
+            this.panel_color.BackColor = System.Drawing.Color.Yellow;
+            this.panel_color.Location = new System.Drawing.Point(18, 21);
+            this.panel_color.Name = "panel_color";
+            this.panel_color.Size = new System.Drawing.Size(72, 53);
+            this.panel_color.TabIndex = 0;
+            this.panel_color.DoubleClick += new System.EventHandler(this.panel_color_DoubleClick);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -85,6 +90,7 @@ namespace WindowsFormsApp15052022
             this.Controls.Add(this.panel1);
             this.Name = "Form3";
             this.Text = "Form3";
+            this.Load += new System.EventHandler(this.Form3_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
@@ -98,5 +104,6 @@ namespace WindowsFormsApp15052022
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.Panel panel_color;
+        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }
